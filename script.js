@@ -48,7 +48,7 @@ button.addEventListener ("click", function(){
         sconto = 40/100*prezzoNormale
     }
 
-    let valoreFinale = (prezzoNormale.toFixed(2) - sconto.toFixed(2)) + " €"
+    let valoreFinale = (prezzoNormale - sconto).toFixed(2) + " €"
 
     prezzo.innerText = valoreFinale
 

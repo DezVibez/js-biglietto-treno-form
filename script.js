@@ -9,53 +9,43 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 */
 
 
-let km = document.getElementById("chilometri")
-let età = document.getElementById("età")
+
+let distanza = document.getElementById("chilometri")
+
+let fasciaEtà = document.getElementById("età")
+
 let button = document.getElementById("button")
 
-let valoreFinale 
+let prezzoAdulto
 
-button.addEventListener ("click", function(){
+let sconto = 0
+
+let prezzoFinale
+
+
+
+button.addEventListener("click" , function() {
+
+    prezzoAdulto = (parseInt(chilometri.value)) * 0.21
     
-
-
-
-    let prezzoNormale
-
-    prezzoNormale = parseInt(km.value) * 0.21
-
-    console.log(prezzoNormale)
-
-    let sconto
-
-    let prezzo = document.getElementById("prezzo")
-    
-    
-
-    if (document.getElementById('età').value == 'adulto'){
-        
+    if (età.value == "adulto"){
         sconto = 0
+        console.log(prezzoFinale)
     }
+    if (età.value == "minorenne"){
+        sconto = 20/100 * prezzoAdulto
+        console.log(prezzoFinale)
+    }
+    if (età.value == "over65"){
+        sconto = 40/100 * prezzoAdulto
+        console.log(prezzoFinale)
+    }
+
+    prezzoFinale = prezzoAdulto - sconto
+    let risultato = document.getElementById("prezzo")
+    risultato.innerText = prezzoFinale.toFixed(2)
     
-
-    if (document.getElementById('età').value == 'minorenne'){
-        
-        sconto = 20/100*prezzoNormale
-    }
-    
-    if (document.getElementById('età').value == 'over65'){
-        
-        sconto = 40/100*prezzoNormale
-    }
-
-    let valoreFinale = (prezzoNormale - sconto).toFixed(2) + " €"
-
-    prezzo.innerText = valoreFinale
-
-   
-
-
-});
+})
 
 
    

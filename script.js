@@ -11,44 +11,43 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 /* Assegnazione input*/
 
 
-let età = document.getElementById("età")
-console.log (età)
-
-let destinazione = parseInt(document.getElementById("chilometri"))
-destinazione = chilometri.value
-console.log (destinazione + " Km")
-
-let prezzo = document.getElementById("prezzo")
-let button = document.getElementById("bottone")
-let prezzoBiglietto = 0.21 * destinazione
-
-console.log (prezzoBiglietto)
-console.log (prezzoBiglietto - prezzoBiglietto * (20/100))
-console.log (prezzoBiglietto - prezzoBiglietto * (40/100))
-
-
-
-/* Validazione */
-
-if (isNaN(destinazione)) {
-    alert("Destinazione non valida, deve inserire un numero!")
-}
 
 /*Button*/ 
 
 
-button.addEventListener("click", function () {
-    if (età.value === "minorenne") {
-        prezzoBiglietto =(prezzoBiglietto - prezzoBiglietto * (20/100));
-        console.log(prezzoBiglietto)} 
+button.addEventListener("click", function (){
 
-if else (età.value === "over65") {
-        prezzoBiglietto =(prezzoBiglietto - prezzoBiglietto * (20/100));
-        console.log(prezzoBiglietto)} 
 
-else (età.value === "adulto") {
+        let destinazione = parseInt(document.getElementById("chilometri"))
+        
+        destinazione = chilometri.value
+
+        let età = document.getElementById("età")
+        età.value = età
+        
+
+        let prezzoBiglietto = 0.21 * destinazione
+
+
+       
+
+        
+        
+
+
+    if (età.value === "minorenne"); {
+        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto / 100) * 20;
+        } 
+
+    if (età.value === "over65"); {
+        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto / 100) * 40;
+        } 
+
+    if (età.value === "adulto"); {
         prezzoBiglietto = prezzoBiglietto;
-        console.log(prezzoBiglietto)} 
+        } 
+
+        console.log(prezzoBiglietto + " €")
     
 })
 

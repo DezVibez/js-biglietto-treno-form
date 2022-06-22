@@ -12,7 +12,6 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 
 
 let età = document.getElementById("età")
-età = età.value
 console.log (età)
 
 let destinazione = parseInt(document.getElementById("chilometri"))
@@ -22,20 +21,12 @@ console.log (destinazione + " Km")
 let prezzo = document.getElementById("prezzo")
 let button = document.getElementById("bottone")
 let prezzoBiglietto = 0.21 * destinazione
+
 console.log (prezzoBiglietto)
 console.log (prezzoBiglietto - prezzoBiglietto * (20/100))
 console.log (prezzoBiglietto - prezzoBiglietto * (40/100))
 
-/*condizioni*/
 
-if (età.value === "minorenne") {prezzoBiglietto =(prezzoBiglietto - prezzoBiglietto * (20/100))
-console.log(prezzoBiglietto)} 
-
-if (età.value === "over65") {} {prezzoBiglietto =(prezzoBiglietto - prezzoBiglietto * (20/100))
-    console.log(prezzoBiglietto)} 
-
-if (età.value === "adulto") {} {prezzoBiglietto = prezzoBiglietto
-    console.log(prezzoBiglietto)} 
 
 /* Validazione */
 
@@ -47,9 +38,18 @@ if (isNaN(destinazione)) {
 
 
 button.addEventListener("click", function () {
+    if (età.value === "minorenne") {
+        prezzoBiglietto =(prezzoBiglietto - prezzoBiglietto * (20/100));
+        console.log(prezzoBiglietto)} 
+
+if else (età.value === "over65") {
+        prezzoBiglietto =(prezzoBiglietto - prezzoBiglietto * (20/100));
+        console.log(prezzoBiglietto)} 
+
+else (età.value === "adulto") {
+        prezzoBiglietto = prezzoBiglietto;
+        console.log(prezzoBiglietto)} 
     
-    console.log(prezzoBiglietto)
-    prezzo.getElementById
 })
 
 

@@ -26,7 +26,7 @@ button.addEventListener ("click", function(){
 
     console.log(prezzoNormale)
 
-    let sconto 
+    let sconto
 
     let prezzo = document.getElementById("prezzo")
     
@@ -48,11 +48,11 @@ button.addEventListener ("click", function(){
         sconto = 40/100*prezzoNormale
     }
 
-    let valoreFinale = prezzoNormale - sconto
+    let valoreFinale = (prezzoNormale.toFixed(2) - sconto.toFixed(2)) + " €"
 
     prezzo.innerText = valoreFinale
-    console.log (sconto)
-    console.log (valoreFinale)
+
+   
 
 
 });

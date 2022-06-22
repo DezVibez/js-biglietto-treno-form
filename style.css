@@ -1,4 +1,27 @@
 
-body {
-    background-color: aqua;
+.container {
+    margin: 0 auto;
+    max-width: 80%;
+    height: 100px;
+    background-color: bisque;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.blocco-1 {
+    width: 100%;
+}
+
+.blocco-2 {
+    width: 100%;
+}
+
+#prezzo {
+    background-color: white;
+    margin-left: 20px
 }

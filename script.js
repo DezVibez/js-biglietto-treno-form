@@ -8,48 +8,67 @@ va applicato uno sconto del 40% per gli over 65.
 Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato con massimo due decimali, per indicare centesimi sul prezzo).
 */
 
-/* Assegnazione input*/
 
+let km = document.getElementById("chilometri")
+let età = document.getElementById("età")
+let button = document.getElementById("button")
 
+let valoreFinale 
 
-/*Button*/ 
-
-
-button.addEventListener("click", function (){
-
-
-        let destinazione = parseInt(document.getElementById("chilometri"))
-        
-        destinazione = chilometri.value
-
-        let età = document.getElementById("età")
-        età.value = età
-        
-
-        let prezzoBiglietto = 0.21 * destinazione
-
-
-       
-
-        
-        
-
-
-    if (età.value === "minorenne"); {
-        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto / 100) * 20;
-        } 
-
-    if (età.value === "over65"); {
-        prezzoBiglietto = prezzoBiglietto - (prezzoBiglietto / 100) * 40;
-        } 
-
-    if (età.value === "adulto"); {
-        prezzoBiglietto = prezzoBiglietto;
-        } 
-
-        console.log(prezzoBiglietto + " €")
+button.addEventListener ("click", function(){
     
-})
+
+
+
+    let prezzoNormale
+
+    prezzoNormale = parseInt(km.value) * 0.21
+
+    console.log(prezzoNormale)
+
+    let sconto 
+
+    let prezzo = document.getElementById("prezzo")
+    
+    
+
+    if (document.getElementById('età').value == 'adulto'){
+        
+        sconto = 0
+    }
+    
+
+    if (document.getElementById('età').value == 'minorenne'){
+        
+        sconto = 20/100*prezzoNormale
+    }
+    
+    if (document.getElementById('età').value == 'over65'){
+        
+        sconto = 40/100*prezzoNormale
+    }
+
+    let valoreFinale = prezzoNormale - sconto
+
+    prezzo.innerText = valoreFinale
+    console.log (sconto)
+    console.log (valoreFinale)
+
+
+});
+
+
+   
+    
+
+  
+
+
+
+
+
+
+
 
 
     

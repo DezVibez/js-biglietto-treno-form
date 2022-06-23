@@ -26,12 +26,10 @@ let prezzoFinale
 
 button.addEventListener("click" , function() {
 
+    /* Se sono minorenne o over65 applico uno sconto altrimenti il prezzo adulto non è scontato */
+
     prezzoAdulto = (parseInt(chilometri.value)) * 0.21
     
-    if (età.value == "adulto"){
-        sconto = 0
-        console.log(prezzoFinale)
-    }
     if (età.value == "minorenne"){
         sconto = 20/100 * prezzoAdulto
         console.log(prezzoFinale)
